@@ -1,8 +1,11 @@
 function [set] = prepareTrainingSet(master, copy)
     global settings;
-    set = repmat(struct('master', zeros(421, 1), 'copy', zeros(421, 1), 'de', 0), floor(settings.dsSize/10), 1);    
     
-    for idx=1:floor(settings.dsSize/10)
+    N = floor(settings.dsSize/10);
+    z = zeros(421, 1);
+    set = repmat(struct('master', z, 'copy', z, 'de', 0), N, 1);    
+    
+    for idx=1:N
         set(idx).master = master(:, idx);
         set(idx).copy = copy(:, idx);
     end
