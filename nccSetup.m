@@ -11,9 +11,9 @@ function s = nccSetup()
     settings.samples = 0;
 
     %% Gaussian Noise parameters
-    settings.nmin = 1;
-    settings.nmax = 1.13;
-    settings.nseed = 1;
+    settings.nMin = 1;
+    settings.nMax = 1.13;
+    settings.nSeed = 1;
 
     %% Return a copy of the settings
     s = settings;

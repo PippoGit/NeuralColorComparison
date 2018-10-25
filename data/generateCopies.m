@@ -1,7 +1,7 @@
 function spectra = generateCopies(master)
     global settings;
     
-    rng(settings.nseed);
-    spectra = master*unifrnd(settings.nmin, settings.nmax);
+    rng(settings.nSeed);
+    spectra = master*unifrnd(settings.nMin, settings.nMax);
 end
 
