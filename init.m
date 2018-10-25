@@ -1,7 +1,7 @@
 function [] = init()
     global settings;
     
-    settings.wl = 380:1:800;
+    settings.wlrange = 380:1:800;
     
     [mSpectra, ~, settings.dsSize, settings.wavelen] = extractDataset();
     mColors = colorsFromSpectra(mSpectra);  
