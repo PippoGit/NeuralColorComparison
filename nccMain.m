@@ -1,7 +1,7 @@
-s = configure();
+settings = nccSetup();
 
 %% Extract dataset
-[mSpectra, ~, s.dsSize, s.samples] = extractDataset();
+[mSpectra, ~, settings.dsSize, settings.samples] = extractDataset();
 mColors = colorsFromSpectra(mSpectra);  
 
 %% Generate Training Set
