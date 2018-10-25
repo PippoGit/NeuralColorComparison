@@ -8,7 +8,7 @@ function [] = init()
     
     [cSpectra, cColors] = generateCopies(mSpectra);
     
-    trainingSet = prepareTrainingSet(mSpectra, cSpectra);
+    ts = prepareTrainingSet(mSpectra, cSpectra);
     
     plotColorsMatrix(mColors);
     plotColorsMatrix(cColors);
