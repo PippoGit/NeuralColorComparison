@@ -6,14 +6,14 @@ function s = nccSetup()
     global settings;
     
     %% Dataset parameters
-    settings.wlrange = 380:1:800;
+    settings.wlRange = 380:1:800;
     settings.dsSize = 0;
     settings.samples = 0;
 
     %% Gaussian Noise parameters
-    settings.rmin = 1;
-    settings.rmax = 1.13;
-    settings.rseed = 1;
+    settings.nmin = 1;
+    settings.nmax = 1.13;
+    settings.nseed = 1;
 
     %% Return a copy of the settings
     s = settings;
