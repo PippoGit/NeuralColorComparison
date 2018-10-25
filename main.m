@@ -1,15 +1,7 @@
-global settings;
-
-settings.wlrange = 380:1:800;
-settings.dsSize = 0;
-settings.wavelen = 0;
-
-settings.rmin = 1;
-settings.rmax = 1.13;
-settings.rseed = 1;
+s = configure();
 
 %% Extract dataset
-[mSpectra, ~, settings.dsSize, settings.wavelen] = extractDataset();
+[mSpectra, ~, s.dsSize, s.samples] = extractDataset();
 mColors = colorsFromSpectra(mSpectra);  
 
 %% Generate Training Set

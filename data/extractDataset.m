@@ -1,9 +1,9 @@
-function [spectra, coordinates, datasetSize, spectraWave] = extractDataset() 
+function [spectra, coordinates, datasetSize, spectraSamples] = extractDataset() 
     spectra = [];
     coordinates = [];    
 
     load('dataset.mat', 'spectra', 'coordinates');
     spectra = (spectra*100)';
     datasetSize = size(coordinates, 2);
-    spectraWave = size(spectra, 1);
+    spectraSamples = size(spectra, 1);
 end
