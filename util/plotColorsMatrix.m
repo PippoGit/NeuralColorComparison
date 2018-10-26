@@ -1,12 +1,20 @@
 function plotColorsMatrix(colors)
     N = sqrt(size(colors));
-
-    for idx=1:N
-        for idy=1:N
-            pos = [idx-1 idy-1 1 1];
-            rgb = colors(idx*idy,:).rgb;
-            rectangle('Position', pos, 'FaceColor', rgb);
+    x = 0;
+    y = 0;
+    
+    for idx=1:size(colors)
+        rgb = colors(idx,:).rgb;
+        
+        if(x >= N)
+            x = 0;
+            y = y + 1;
         end
+        
+        pos = [x y 1 1];
+        rectangle('Position', pos, 'FaceColor', rgb);
+        
+        x = x+1;
     end
 end
 

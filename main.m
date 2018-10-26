@@ -1,3 +1,4 @@
+global settings;
 settings = nccSetup();
 
 %% Extract dataset
@@ -5,9 +6,7 @@ settings = nccSetup();
 mColors = colorsFromSpectra(mSpectra);  
 
 %% Generate Training Set
-cSpectra = generateCopies(mSpectra);
-ts = prepareTrainingSet(mSpectra, cSpectra);
+ts = prepareTrainingSet(mSpectra);
 
 %% Visualize Output
 plotColorsMatrix(mColors);
-plotColorsMatrix(cColors);

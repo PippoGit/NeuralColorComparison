@@ -2,8 +2,12 @@ function s = nccSetup()
 %NCCSETUP Initialize the configuration for the system
 %   Define a global variable 'settings' that contains information about
 %   dataset, gaussian noise and more...
+%   It also initializes the preferences for OPTPROP.
 
     global settings;
+    
+    %% OPTPROP Preference
+    optsetpref('cwf','D65/2');
     
     %% Dataset parameters
     settings.wlRange = 380:1:800;
@@ -11,6 +15,7 @@ function s = nccSetup()
     settings.samples = 0;
 
     %% Gaussian Noise parameters
+    settings.ncopies = 10;
     settings.nMin = 1;
     settings.nMax = 1.13;
     settings.nSeed = 1;

@@ -1,15 +1,20 @@
-function [set] = prepareTrainingSet(master, copy)
+function [set] = prepareTrainingSet(master)
     global settings;
     
-    N = floor(settings.dsSize/10);
+    N = settings.ncopies * settings.dsSize;
     z = zeros(settings.samples, 1);
     set = repmat(struct('master', z, 'copy', z, 'de', 0), N, 1);    
     
-    for idx=1:N
-        set(idx).master = master(:, idx);
-        set(idx).copy = copy(:, idx);
+    for i=1:settings.ncopies
+        copy = generateCopies(master);
+        diff = de(master, copy);
+        
+        for idx=1:settings.dsSize
+            index = (i-1)*(settings.dsSize)+idx;
+            set(index).master = master(idx, :);
+            set(index).copy = copy(idx, :);
+            set(index).de = diff(idx);
+        end
     end
-    [set.de] = deal(de(master, copy));
-    
 end
 
