@@ -5,5 +5,5 @@ function [spectra, coordinates, datasetSize, spectraSamples] = extractDataset()
     load('dataset.mat', 'spectra', 'coordinates');
     spectra = (spectra*100)';
     datasetSize = size(coordinates, 2);
-    spectraSamples = size(spectra, 1);
+    spectraSamples = size(spectra, 2);
 end
