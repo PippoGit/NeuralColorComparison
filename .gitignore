@@ -1,3 +1,6 @@
+# MacOs DS_Store
+.DS_Store
+
 # Windows default autosave extension
 *.asv
 
