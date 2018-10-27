@@ -1,4 +1,10 @@
 global settings;
+
+%% Setup global configuration
+addpath(genpath('optprop'));
+addpath('util');
+addpath('data');
+
 settings = nccSetup();
 
 %% Extract dataset
