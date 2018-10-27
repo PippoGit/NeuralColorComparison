@@ -5,7 +5,7 @@ addpath(genpath('optprop'));
 addpath('util');
 addpath('data');
 
-settings = nccSetup();
+settings = nccInitPreferences();
 
 %% Extract dataset
 [mSpectra, ~, settings.dsSize, settings.samples] = extractDataset();

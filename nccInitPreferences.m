@@ -1,5 +1,5 @@
-function s = nccSetup()
-%NCCSETUP Initialize the configuration for the system
+function s = nccInitPreferences()
+%NCCINITPREFERENCES Initialize the configuration for the system
 %   Define a global variable 'settings' that contains information about
 %   dataset, gaussian noise and more...
 %   It also initializes the preferences for OPTPROP.
