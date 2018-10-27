@@ -8,6 +8,7 @@ function s = nccInitPreferences()
     
     %% OPTPROP Preference
     optsetpref('cwf','D65/2');
+    optsetpref('WorkingRGB', 'srgb');
     
     %% Dataset parameters
     settings.wlRange = 380:1:800;
