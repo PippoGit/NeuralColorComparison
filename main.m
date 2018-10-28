@@ -4,15 +4,18 @@ global settings;
 addpath(genpath('optprop'));
 addpath('util');
 addpath('data');
+addpath('brain');
 
 settings = nccInitPreferences();
 
-%% Extract dataset
-[mSpectra, ~, settings.dsSize, settings.samples] = extractDataset();
+%% Extract raw data from .mat file
+[mSpectra, ~, settings.dsSize, settings.samples] = loadRawData();
 mColors = colorsFromSpectra(mSpectra);  
 
 %% Generate Training Set
-ts = prepareTrainingSet(mSpectra);
+ds = generateDataSet(mSpectra);
+[input, target] = getTrainingSetFromDataSet(ds);
+nccNetwork = nccNet(input, target);
 
 %% Visualize Output
 plotColorsMatrix(mColors);

@@ -21,6 +21,9 @@ function s = nccInitPreferences()
     settings.nMax = 1.13;
     settings.nSeed = 1;
 
+    %% Compression rate
+    settings.compressionrate = 1/5;
+    
     %% Return a copy of the settings
     s = settings;
 end
