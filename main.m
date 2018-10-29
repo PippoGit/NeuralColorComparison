@@ -10,12 +10,12 @@ settings = nccInitPreferences();
 
 %% Extract raw data from .mat file
 [mSpectra, ~, settings.dsSize, settings.samples] = loadRawData();
-mColors = colorsFromSpectra(mSpectra);  
 
 %% Generate Training Set
 ds = generateDataSet(mSpectra);
 [input, target] = getTrainingSetFromDataSet(ds);
-nccNetwork = nccNet(input, target);
+%nccNetwork = nccNet(input, target);
 
 %% Visualize Output
+mColors = colorsFromSpectra(mSpectra);  
 plotColorsMatrix(mColors);

@@ -1,12 +1,12 @@
 function [set] = generateDataSet(master)
     global settings;
        
-    N = settings.ncopies * settings.dsSize;
+    N = settings.nCopies * settings.dsSize;
     z = zeros(settings.samples, 1);
     set = repmat(struct('master', z, 'copy', z, 'de', 0), N, 1);  
     copies = generateCopies(master);
     
-    for i=1:settings.ncopies
+    for i=1:settings.nCopies
         copy = copies(i).spectra;
         colors = [colorsFromSpectra(master) colorsFromSpectra(copy)];
 

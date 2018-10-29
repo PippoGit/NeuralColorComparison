@@ -16,13 +16,13 @@ function s = nccInitPreferences()
     settings.samples = 0;
 
     %% Gaussian Noise parameters
-    settings.ncopies = 10;
-    settings.nMin = 1;
-    settings.nMax = 1.13;
+    settings.nCopies = 10;
+    settings.nMin = 1.015; % 1.015 (Con 1.0075 rallento troppo il training per casi poco credibili di copie molto fedeli)
+    settings.nMax = 1.135;
     settings.nSeed = 1;
 
     %% Compression rate
-    settings.compressionrate = 1/5;
+    settings.compressionRate = 5;
     
     %% Return a copy of the settings
     s = settings;
