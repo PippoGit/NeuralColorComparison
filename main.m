@@ -8,14 +8,13 @@ addpath('brain');
 
 settings = nccInitPreferences();
 
-%% Extract raw data from .mat file
-[mSpectra, ~, settings.dsSize, settings.samples] = loadRawData();
+%% Import dataset and feature extraction
+ds = importDataset();
 
-%% Generate Training Set
-ds = generateDataSet(mSpectra);
-[input, target] = getTrainingSetFromDataSet(ds);
-%nccNetwork = nccNet(input, target);
+netTarget = [ds.de]';
+netInput = extractFeaturesFromDataset(ds);
+%nccNetwork = nccNet(netInput, netTarget);
 
-%% Visualize Output
-mColors = colorsFromSpectra(mSpectra);  
-plotColorsMatrix(mColors);
+[fs,hst] = sequentialfs(@nccNet, netInput, netTarget, 'cv', 'none', 'nfeatures', 5);
+
+%% TODO: Feature selection 

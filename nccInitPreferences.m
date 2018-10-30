@@ -17,7 +17,7 @@ function s = nccInitPreferences()
 
     %% Gaussian Noise parameters
     settings.nCopies = 10;
-    settings.nMin = 1.015; % 1.015 (Con 1.0075 rallento troppo il training per casi poco credibili di copie molto fedeli)
+    settings.nMin = 1.015; % 1.0075
     settings.nMax = 1.135;
     settings.nSeed = 1;
 

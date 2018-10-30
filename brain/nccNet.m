@@ -7,7 +7,7 @@
 %   input - input data.
 %   target - target data.
 
-function [net] = nccNet(input, target) 
+function [mse] = nccNet(input, target) 
 x = input';
 t = target';
 
@@ -19,7 +19,7 @@ t = target';
 trainFcn = 'trainlm';  % Levenberg-Marquardt backpropagation.
 
 % Create a Fitting Network
-hiddenLayerSize = 10;
+hiddenLayerSize = 5;
 net = fitnet(hiddenLayerSize,trainFcn);
 
 % Choose Input and Output Pre/Post-Processing Functions
@@ -61,7 +61,7 @@ valPerformance = perform(net,valTargets,y)
 testPerformance = perform(net,testTargets,y)
 
 % View the Network
-view(net)
+% view(net) -> HELL NO!
 
 % Plots
 % Uncomment these lines to enable various plots.
@@ -71,26 +71,8 @@ view(net)
 %figure, plotregression(t,y)
 %figure, plotfit(net,x,t)
 
-% Deployment
-% Change the (false) values to (true) to enable the following code blocks.
-% See the help for each generation function for more information.
-if (false)
-    % Generate MATLAB function for neural network for application
-    % deployment in MATLAB scripts or with MATLAB Compiler and Builder
-    % tools, or simply to examine the calculations your trained neural
-    % network performs.
-    genFunction(net,'myNeuralNetworkFunction');
-    y = myNeuralNetworkFunction(x);
-end
-if (false)
-    % Generate a matrix-only MATLAB function for neural network code
-    % generation with MATLAB Coder tools.
-    genFunction(net,'myNeuralNetworkFunction','MatrixOnly','yes');
-    y = myNeuralNetworkFunction(x);
-end
-if (false)
-    % Generate a Simulink diagram for simulation or deployment with.
-    % Simulink Coder tools.
-    gensim(net);
-end
+trIndex = tr.testInd;
+outs = net(x(:, trIndex));
+mse = immse(outs, t(trIndex));
+
 end
