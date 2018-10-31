@@ -1,4 +1,8 @@
 global settings;
+debug = struct('importDataset', 0, ...
+                  'extractFts', 0, ...
+                   'selectFts', 0, ...
+                    'trainNet', 0);
 
 %% Setup global configuration
 addpath(genpath('optprop'));
@@ -9,11 +13,21 @@ addpath('brain');
 settings = nccInitPreferences();
 
 %% Import dataset and feature extraction
-ds = importDataset();
+if debug.importDataset 
+    ds = importDataset();
+    netTarget   = [ds.de]';
+end
 
-netTarget   = [ds.de]';
-netFeatures = extractFeaturesFromDataset(ds);
-netInput    = selectFeaturesFromNetInput(netFeatures, netTarget);
+
+if debug.extractFts  
+    netFeatures = extractFeaturesFromDataset(ds);
+end
+
+if debug.selectFts
+    netInput    = selectFeaturesFromNetInput(netFeatures, netTarget);
+end
 
 %% Define and Train NN using the selected features
-[~, nccNetwork] = nccNet(netInput, netTarget); 
+if debug.trainNet
+    [~, nccNetwork] = nccNet(netInput, netTarget); 
+end

@@ -12,17 +12,23 @@ function s = nccInitPreferences()
     
     %% Dataset parameters
     settings.wlRange = 380:1:800;
-    settings.dsSize = 0;
-    settings.samples = 0;
+    settings.dsSize  = 0; % set by importDataset
+    settings.samples = 0; % set by importDataset
 
     %% Gaussian Noise parameters
     settings.nCopies = 10;
-    settings.nMin = 1.015; % 1.0075
-    settings.nMax = 1.135;
-    settings.nSeed = 1;
+    settings.nMin    = 1.0075; % 1.0075
+    settings.nMax    = 1.135;
+    settings.nSeed   = 1;
 
-    %% Compression rate
+    %% Neural Network and Features
     settings.compressionRate = 5;
+    settings.numFeatures     = 5;
+    
+    settings.hiddenNeurons   = 5;
+    settings.trainRatio      = 60/100;
+    settings.valRatio        = 20/100;
+    settings.testRatio       = 20/100;
     
     %% Return a copy of the settings
     s = settings;

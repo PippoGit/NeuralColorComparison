@@ -8,6 +8,8 @@
 %   target - target data.
 
 function [mse, net] = nccNet(input, target) 
+global settings;
+
 x = input';
 t = target';
 
@@ -19,7 +21,7 @@ t = target';
 trainFcn = 'trainlm';  % Levenberg-Marquardt backpropagation.
 
 % Create a Fitting Network
-hiddenLayerSize = 5;
+hiddenLayerSize = settings.hiddenNeurons;
 net = fitnet(hiddenLayerSize,trainFcn);
 
 % Choose Input and Output Pre/Post-Processing Functions
@@ -31,9 +33,9 @@ net.output.processFcns = {'removeconstantrows','mapminmax'};
 % For a list of all data division functions type: help nndivision
 net.divideFcn = 'dividerand';  % Divide data randomly
 net.divideMode = 'sample';  % Divide up every sample
-net.divideParam.trainRatio = 60/100;
-net.divideParam.valRatio = 20/100;
-net.divideParam.testRatio = 20/100;
+net.divideParam.trainRatio = settings.trainRatio;
+net.divideParam.valRatio = settings.valRatio;
+net.divideParam.testRatio = settings.testRatio;
 
 % Choose a Performance Function
 % For a list of all performance functions type: help nnperformance

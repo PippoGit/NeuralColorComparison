@@ -3,6 +3,9 @@ function plotColorsMatrix(colors)
     x = 0;
     y = 0;
     
+    figure('Name', 'Imported Master', 'NumberTitle', 'off');
+    hold on
+    
     for idx=1:size(colors)
         rgb = colors(idx,:).rgb;
         
@@ -12,9 +15,11 @@ function plotColorsMatrix(colors)
         end
         
         pos = [x y 1 1];
-        rectangle('Position', pos, 'FaceColor', rgb);
+        rectangle('Position', pos, 'FaceColor', rgb)
         
         x = x+1;
     end
+    
+    hold off
 end
 
