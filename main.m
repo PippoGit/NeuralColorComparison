@@ -12,9 +12,8 @@ settings = nccInitPreferences();
 ds = importDataset();
 
 netTarget = [ds.de]';
-netInput = extractFeaturesFromDataset(ds);
-%nccNetwork = nccNet(netInput, netTarget);
+netFeatures = extractFeaturesFromDataset(ds);
+netInput = selectFeaturesFromNetInput(netFeatures, netTarget);
 
-[fs,hst] = sequentialfs(@nccNet, netInput, netTarget, 'cv', 'none', 'nfeatures', 5);
-
-%% TODO: Feature selection 
+%% Define and Train NN using the selected features
+[~, nccNetwork] = nccNet(netInput, netTarget); 

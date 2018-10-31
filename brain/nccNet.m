@@ -7,7 +7,7 @@
 %   input - input data.
 %   target - target data.
 
-function [mse] = nccNet(input, target) 
+function [mse, net] = nccNet(input, target) 
 x = input';
 t = target';
 
