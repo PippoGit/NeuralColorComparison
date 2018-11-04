@@ -17,13 +17,13 @@ function s = nccInitPreferences()
 
     %% Gaussian Noise parameters
     settings.nCopies = 10;
-    settings.nMin    = 1.0075; % 1.0075
+    settings.nMin    = 1.015; % 1.0075
     settings.nMax    = 1.135;
     settings.nSeed   = 1;
 
     %% Neural Network and Features
-    settings.compressionRate = 5;
-    settings.numFeatures     = 5;
+    settings.compressionRate = 50;
+    settings.numFeatures     = 4;
     
     settings.hiddenNeurons   = 5;
     settings.trainRatio      = 60/100;

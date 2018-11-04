@@ -1,8 +1,8 @@
 global settings;
-debug = struct('importDataset', 0, ...
-                  'extractFts', 0, ...
-                   'selectFts', 0, ...
-                    'trainNet', 0);
+debug = struct('importDataset', 1, ...
+                  'extractFts', 1, ...
+                   'selectFts', 1, ...
+                    'trainNet', 1);
 
 %% Setup global configuration
 addpath(genpath('optprop'));
@@ -24,7 +24,11 @@ if debug.extractFts
 end
 
 if debug.selectFts
-    netInput    = selectFeaturesFromNetInput(netFeatures, netTarget);
+    tic;
+    netInput = selectFeaturesFromNetInput(netFeatures, netTarget);
+    toc;
+else
+    netInput = netFeatures;
 end
 
 %% Define and Train NN using the selected features
