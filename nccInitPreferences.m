@@ -22,13 +22,16 @@ function s = nccInitPreferences()
     settings.nSeed   = 1;
 
     %% Neural Network and Features
-    settings.compressionRate = 50;
-    settings.numFeatures     = 4;
+    settings.compressionRate = 40;
+    settings.numFeatures     = 6;
     
     settings.hiddenNeurons   = 5;
     settings.trainRatio      = 60/100;
     settings.valRatio        = 20/100;
     settings.testRatio       = 20/100;
+        
+    %% Fuzzy settings
+    settings.maxC = 127;
     
     %% Return a copy of the settings
     s = settings;

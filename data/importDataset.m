@@ -26,4 +26,5 @@ function [set] = importDataset()
             set(index).de = de(colors(idx, 1).lab, colors(idx, 2).lab);
         end
     end
+
 end
