@@ -1,10 +1,10 @@
 [System]
-Name='nccMamdani'
+Name='nccMamdani2'
 Type='mamdani'
 Version=2.0
 NumInputs=4
 NumOutputs=1
-NumRules=20
+NumRules=15
 AndMethod='min'
 OrMethod='max'
 ImpMethod='min'
@@ -73,13 +73,8 @@ MF5='nonexpert':'trimf',[1.5 2.5 3.5]
 4 2 4 5, 2 (1) : 1
 4 2 5 4, 5 (1) : 1
 4 2 5 5, 2 (1) : 1
-4 2 0 1, 1 (1) : 1
-4 2 0 2, 2 (1) : 1
-4 2 0 3, 3 (1) : 1
-4 2 0 4, 4 (1) : 1
-4 2 0 5, 5 (1) : 1
-2 0 0 1, 1 (1) : 1
-2 0 0 2, 2 (1) : 1
-2 0 0 3, 3 (1) : 1
-2 0 0 4, 4 (1) : 1
-2 0 0 5, 5 (1) : 1
+0 0 0 1, 1 (1) : 1
+0 0 0 2, 2 (1) : 1
+0 0 0 3, 3 (1) : 1
+0 0 0 4, 4 (1) : 1
+0 0 0 5, 5 (1) : 1

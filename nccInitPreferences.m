@@ -22,8 +22,8 @@ function s = nccInitPreferences()
     settings.nSeed   = 1;
 
     %% Neural Network and Features
-    settings.compressionRate = 40;
-    settings.numFeatures     = 6;
+    settings.compressionRate = 50;
+    settings.numFeatures     = 4;
     
     settings.hiddenNeurons   = 5;
     settings.trainRatio      = 60/100;

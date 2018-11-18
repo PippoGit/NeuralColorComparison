@@ -43,4 +43,4 @@ if debug.trainNet
     [~, nccNetwork] = nccNet(netInput, netTarget); 
 end
 
-
+diff = [(1:1:12690)', [ds.de]', netTarget, [ds.de]'-netTarget];
