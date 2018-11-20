@@ -25,7 +25,7 @@ function s = nccInitPreferences()
     settings.compressionRate = 50;
     settings.numFeatures     = 4;
     
-    settings.hiddenNeurons   = 5;
+    settings.hiddenNeurons   = 6;
     settings.trainRatio      = 60/100;
     settings.valRatio        = 20/100;
     settings.testRatio       = 20/100;

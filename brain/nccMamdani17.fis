@@ -1,5 +1,5 @@
 [System]
-Name='nccMamdani17'
+Name='nccMamdani14'
 Type='mamdani'
 Version=2.0
 NumInputs=4
@@ -43,21 +43,21 @@ MF8='Lime':'trimf',[90 130 170]
 Name='DE'
 Range=[0 7]
 NumMFs=5
-MF1='same':'trimf',[0 0 1.25]
-MF2='visible':'trimf',[3.25 4.25 5.25]
-MF3='different':'sigmf',[8.84 5]
-MF4='expert':'trimf',[0.75 1.5 2.25]
-MF5='nonexpert':'trimf',[1.75 2.75 3.75]
+MF1='same':'trimf',[0 0 1]
+MF2='visible':'trimf',[3 4.1 5]
+MF3='different':'sigmf',[7.24 5.04488372093023]
+MF4='expert':'trimf',[0.15 1.25 2]
+MF5='nonexpert':'trimf',[1.5 2.5 3.5]
 
 [Output1]
 Name='AdjustedDE'
 Range=[0 7]
 NumMFs=5
-MF1='same':'trimf',[0 0 1.25]
-MF2='visible':'trimf',[3.25 4.25 5.25]
-MF3='different':'sigmf',[8.84 5]
-MF4='expert':'trimf',[0.75 1.5 2.25]
-MF5='nonexpert':'trimf',[1.75 2.75 3.75]
+MF1='same':'trimf',[0 0 1]
+MF2='visible':'trimf',[3 4.1 5]
+MF3='different':'sigmf',[7.24 5.04488372093023]
+MF4='expert':'trimf',[0.5 1.25 2]
+MF5='nonexpert':'trimf',[1.5 2.5 3.5]
 
 [Rules]
 1 0 0 0, 1 (1) : 1
