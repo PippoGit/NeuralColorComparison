@@ -1,5 +1,5 @@
 <p align="center">
-![NeuralColourComparison](https://i.imgur.com/ntpcSSt.png)<
+![NeuralColourComparison](https://i.imgur.com/ntpcSSt.png)
 </p>
 
 ## Introduction
