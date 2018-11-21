@@ -9,7 +9,7 @@ A neural network based system that compares a master color spectrum to a copy sp
 To test the whole system you can simply execute the **main.m** script. The main script will perform:
 * Generation of the copies: 10 copies for each master;
 * Feature Extraction: statistical mean on spectra (1 every 50 samples):
-* Feature Selection: selection of the top 4 features using the function sequentialfs;
+* Feature Selection: top 4 features selected using the `sequentialfs` matlab function;
 * Fuzzification using the nccMamdani.fis Fuzzy Inference System:
 * Training of the network and results.
 
