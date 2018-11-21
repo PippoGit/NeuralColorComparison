@@ -13,7 +13,7 @@ To test the whole system you can simply execute the **main.m** script. The main 
 * Fuzzification using the nccMamdani.fis Fuzzy Inference System:
 * Training of the network and results.
 
-You can change pretty much all of the parameters through the configuration global struct `settings` (defined in **nccPreferences.m**).
+You can change pretty much all of the parameters through the configuration global struct `settings` (defined in **nccInitPreferences.m**).
 
 ## Documentation
 Do you want to know more about the system? Then you should definitely take a look at the <a href="#">full documentation</a> ! 
