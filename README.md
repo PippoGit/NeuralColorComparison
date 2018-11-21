@@ -1,5 +1,5 @@
 <p align="center">
-<img url="https://i.imgur.com/ntpcSSt.png" alt="Neural Colour Comparison"></img>
+<img src="https://i.imgur.com/ntpcSSt.png" alt="Neural Colour Comparison"></img>
 </p>
 
 ## Introduction
