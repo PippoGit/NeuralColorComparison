@@ -16,4 +16,4 @@ To test the whole system you can simply execute the **main.m** script. The main 
 You can change pretty much all of the parameters through the configuration global struct `settings` (defined in **nccInitPreferences.m**).
 
 ## Documentation
-Do you want to know more about the system? Then you should definitely take a look at the <a href="#">full documentation</a> ! 
+Do you want to know more about the system? Then you should definitely take a look at the <a href="https://github.com/PippoGit/NeuralColorComparison/blob/master/report/documentation.pdf">full documentation</a> ! 
